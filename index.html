@@ -84,7 +84,7 @@
 
         <div class="row ">
           <div class="col-lg-4">
-            <img src="/my-protfolio-2/assets/img/adhin.jpg" style="border-radius: 10px; width: 100%;" class="img-fluid " alt="">
+            <img src="./assets/img/adhin.jpg" style="border-radius: 10px; width: 100%;" class="img-fluid " alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3> Web Developer.</h3>
@@ -688,15 +688,15 @@ let checkname = false;
 
  }
 
-//  $('#name').keypress(function(event){
-//   if (
-//       !event.key.match(/^[A-Za-z ]+$/) ||
-//       (this.value.slice(-1) == ' ' && event.key == ' ')||
-//       (this.value == '' && event.key == ' ')
-//     ) {
-//       event.preventDefault()
-//     }
-//    })
+ $('#name').keypress(function(event){
+  if (
+      !event.key.match(/^[A-Za-z ]+$/) ||
+      (this.value.slice(-1) == ' ' && event.key == ' ')||
+      (this.value == '' && event.key == ' ')
+    ) {
+      event.preventDefault()
+    }
+   })
 
  $(document).ready(function () {
     $("#name").keyup(function () {
@@ -721,7 +721,7 @@ let checkname = false;
 $("#submit-form").submit((e)=>{
  
  e.preventDefault()
- if(checkmessage){
+ if(checkmessage & checkname & checkemail){
  $.ajax({
      url:"https://script.google.com/macros/s/AKfycbySovtl64AvL5ZELUmf4d1CpG6mIr5iZDlSSYvlYlWTlhblyNkbP8w6PpR0RIxozkBBJg/exec",
      data:$("#submit-form").serialize(),
